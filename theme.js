@@ -16,3 +16,11 @@ let saved = "light";
 try { saved = localStorage.getItem("fynske-theme") || "light"; } catch (_) {}
 setTheme(saved === "nordic" ? "light" : saved);
 buttons.forEach((button) => button.addEventListener("click", () => setTheme(button.dataset.theme)));
+
+const backToTop = document.querySelector(".back-to-top");
+function updateBackToTop() {
+  backToTop.classList.toggle("visible", window.scrollY > 420);
+}
+window.addEventListener("scroll", updateBackToTop, { passive: true });
+backToTop.addEventListener("click", () => window.scrollTo({ top: 0, behavior: "smooth" }));
+updateBackToTop();

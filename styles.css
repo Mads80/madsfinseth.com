@@ -49,7 +49,12 @@ h1 { max-width:780px; margin-bottom:35px; font:400 clamp(72px,8vw,128px)/.86 var
 .about { background:var(--about-bg,#dce2dc); padding:130px 0; }
 .about-inner { display:grid; grid-template-columns:.65fr 1.4fr 1fr; gap:60px; align-items:start; }
 .about-inner>p:last-child { font-size:18px; line-height:1.8; opacity:.75; }
-.footer { min-height:110px; display:flex; justify-content:space-between; align-items:center; font:16px var(--display); opacity:.7; }
+.footer { min-height:110px; display:flex; justify-content:flex-start; align-items:center; text-align:left; font:16px var(--display); opacity:.7; }
+.back-to-top { position:fixed; right:clamp(20px,3vw,46px); bottom:clamp(20px,3vw,42px); z-index:20; width:52px; height:52px; display:grid; place-items:center; border:1px solid var(--line); border-radius:50%; background:color-mix(in srgb,var(--paper) 88%,transparent); color:var(--ink); box-shadow:0 10px 30px rgba(0,0,0,.16); backdrop-filter:blur(12px); cursor:pointer; opacity:0; visibility:hidden; transform:translateY(14px); transition:opacity .25s,visibility .25s,transform .25s,background .2s; }
+.back-to-top span { font-size:25px; line-height:1; transform:translateY(-1px); }
+.back-to-top.visible { opacity:1; visibility:visible; transform:translateY(0); }
+.back-to-top:hover { background:var(--accent); color:#fff; transform:translateY(-3px); }
+.back-to-top:focus-visible { outline:3px solid var(--accent); outline-offset:4px; }
 
 html[data-theme="dark"] { --ink:#eaf2ef; --paper:#071725; --accent:#a9dcd1; --line:rgba(180,220,215,.2); --hero-ink:#f1f5f4; --hero-line:rgba(220,240,238,.2); --hero-image:url('assets/dark-hero.png'); --shade:linear-gradient(90deg,rgba(4,19,31,.95),rgba(4,19,31,.52) 45%,rgba(4,19,31,.08) 78%); --picker-bg:rgba(5,24,37,.5); --picker-selected:rgba(167,218,207,.2); --about-bg:#0b2231; --display:"Arial Narrow",Impact,sans-serif; --photo-filter:saturate(.55) brightness(.65) hue-rotate(160deg); }
 html[data-theme="dark"] .brand,html[data-theme="dark"] h1,html[data-theme="dark"] h2 { text-transform:none; }
@@ -80,11 +85,14 @@ html[data-theme="light"] { --hero-image:url('assets/nordic-hero.png'); }
   .section-heading>p { margin-top:24px; }
   .trip-grid { grid-template-columns:1fr; gap:50px; }
   .about-inner { grid-template-columns:1fr; gap:30px; }
-  .footer { align-items:flex-start; flex-direction:column; justify-content:center; gap:8px; }
+  .footer { align-items:center; justify-content:flex-start; }
+  .back-to-top { width:46px; height:46px; }
 }
 
-.dark-title { display:none; }
-html[data-theme="dark"] .dark-title { display:inline; }
-html[data-theme="dark"] .light-title { display:none; }
+@media (prefers-reduced-motion:reduce) {
+  html { scroll-behavior:auto; }
+  .back-to-top { transition:none; }
+}
+
 .dark-swatch { background:#10283a; }
 .light-swatch { background:#426255; }
