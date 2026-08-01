@@ -90,15 +90,20 @@ html[data-theme="morning"] { --ink:#302820; --paper:#f4e8d8; --accent:#945f3f; -
 
 html[data-theme="day"] { --hero-image:url('assets/day-hero.png'); --about-bg:#dce2dc; }
 
-html[data-theme="evening"] { --ink:#f0f6f4; --paper:#071725; --accent:#bce8de; --line:rgba(205,235,231,.28); --hero-ink:#f7fbfa; --hero-line:rgba(225,244,241,.28); --hero-image:url('assets/dark-hero.png'); --shade:linear-gradient(90deg,rgba(4,19,31,.96),rgba(4,19,31,.58) 46%,rgba(4,19,31,.12) 78%); --picker-bg:rgba(5,24,37,.68); --picker-selected:rgba(183,230,220,.24); --about-bg:#102b3b; --display:"Arial Narrow",Impact,sans-serif; --photo-filter:saturate(.58) brightness(.72) hue-rotate(160deg); }
+html[data-theme="evening"] { --ink:#f3f8f7; --paper:#071725; --accent:#c4eee5; --line:rgba(220,242,238,.34); --hero-ink:#f7fbfa; --hero-line:rgba(225,244,241,.34); --hero-image:url('assets/dark-hero.png'); --shade:linear-gradient(90deg,rgba(4,19,31,.96),rgba(4,19,31,.6) 46%,rgba(4,19,31,.14) 78%); --picker-bg:rgba(5,24,37,.82); --picker-selected:rgba(196,238,229,.25); --about-bg:#102b3b; --display:"Arial Narrow",Impact,sans-serif; --photo-filter:saturate(.84) brightness(.9) contrast(1.04); }
 html[data-theme="evening"] .brand,html[data-theme="evening"] h1,html[data-theme="evening"] h2 { text-transform:none; }
 html[data-theme="evening"] h1 { font-weight:700; letter-spacing:-.045em; }
 html[data-theme="evening"] .primary-button { color:#102b3b; }
+html[data-theme="evening"] .brand-domain,
+html[data-theme="evening"] .picker-label { opacity:.82; }
+html[data-theme="evening"] .theme-options button { opacity:.78; }
+html[data-theme="evening"] .theme-options button.selected { opacity:1; color:#fff; }
 html[data-theme="evening"] .section-heading>p,
 html[data-theme="evening"] .trip-card p,
+html[data-theme="evening"] .trip-page-story p,
 html[data-theme="evening"] .gallery figcaption,
 html[data-theme="evening"] .about-inner>p:last-child,
-html[data-theme="evening"] .footer { opacity:.86; }
+html[data-theme="evening"] .footer { opacity:.94; }
 
 @media (max-width:1050px) {
   .header { grid-template-columns:1fr auto; gap:18px; }
